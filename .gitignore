@@ -1,0 +1,67 @@
+# =========================
+# Secrets & Environment
+# =========================
+# Local environment variables
+.env
+!.env.example
+
+# =========================
+# Java / Spring Boot build
+# =========================
+# Maven / Gradle
+**/target/
+**/build/
+**/.gradle/
+
+# Compiled artifacts
+*.class
+*.jar
+*.war
+*.ear
+
+# =========================
+# Node / React / TypeScript
+# =========================
+node_modules/
+dist/
+
+# =========================
+# IDE & Editor
+# =========================
+# IntelliJ IDEA
+.idea/
+**/*.iml
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+
+# VSCode
+.vscode/
+.history/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs & Runtime
+# =========================
+*.log
+logs/
+tmp/
+temp/
+*.pid
+*.seed
+
+# Test / coverage
+coverage/
+*.lcov
+
+# =========================
+# Misc / temp files
+# =========================
+*.bak
+*.swp
+*.tmp
+*.orig
