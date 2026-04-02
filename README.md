@@ -11,24 +11,17 @@ cinema-ticket-booking/
 ├── README.md                       # This instruction file
 ├── .env.example                    # Example environment variables
 ├── docker-compose.yml              # Multi-container setup for all services
-├── docs/                           # Documentation folder
-│   ├── architecture.md             # Describe your system design here
-│   ├── analysis-and-design.md      # Document system analysis and design details
-│   ├── asset/                      # Store images, diagrams, or other visual assets for documentation
-│   └── api-specs/                  # API specifications in OpenAPI (YAML)
-│       ├── service-a.yaml
-│       └── service-b.yaml
-├── scripts/                        # Utility or deployment scripts
+├── scripts/                        # DB init
 │   └── init.sh
-├── services/                       # Application microservices
-│   ├── service-a/
-│   │   ├── Dockerfile
-│   │   └── src/
-│   │   └── readme.md               # Service A instructions and description
-│   └── service-b/
-│       ├── Dockerfile
-│       └── src/
-│   │   └── readme.md               # Service B instructions and description
+├── services/                       # Application services + shared libs + frontend
+│   ├── booking-service/
+│   ├── cinema-booking-web/         # Frontend (Vite + React, built to static assets)
+│   ├── common-lib/
+│   ├── customer-service/
+│   ├── movie-service/
+│   ├── notification-service/
+│   ├── payment-service/
+│   └── seat-service/         
 └── gateway/                        # API Gateway / reverse proxy
     ├── Dockerfile
     └── src/
