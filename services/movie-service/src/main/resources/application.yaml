@@ -1,3 +1,26 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /
+
 spring:
   application:
     name: movie-service
+  datasource:
+    url: jdbc:postgresql://${POSTGRES_HOST}:5432/${DB_MOVIE}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate.format_sql: true
+
+logging:
+  pattern:
+    console: "%d{HH:mm:ss} [%X{traceId}] [%X{bookingId}] %-5level %logger{36} - %msg%n"
+  level:
+    com.cinema: DEBUG

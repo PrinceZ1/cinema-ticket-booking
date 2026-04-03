@@ -1,7 +1,7 @@
 # ============================================================
-# Root environment for docker-compose.yml (example template)
-# Copy to ".env" and fill real values.
-# application.yml no longer embeds defaults — required variables must be set.
+# Root environment for docker-compose.yml (development values)
+# application.yml no longer embeds defaults — set everything you need here
+# (or via your shell / IDE when running without Docker).
 # Format: KEY=VALUE
 # ============================================================
 
@@ -10,7 +10,7 @@
 # ----------------------------
 # Credentials for the Postgres container
 POSTGRES_USER=postgres
-POSTGRES_PASSWORD=<your_postgres_password>
+POSTGRES_PASSWORD=postgres
 
 # Default database used by the Postgres entrypoint (init scripts connect to this DB)
 POSTGRES_DB=postgres
@@ -18,7 +18,9 @@ POSTGRES_DB=postgres
 # Default host name for Postgres inside Docker network (used by Spring Boot apps)
 POSTGRES_HOST=postgres
 
-# Service ports (for reference)
+# ----------------------------
+# Service ports (host-side; for reference)
+# ----------------------------
 GATEWAY_PORT=8080
 BOOKING_PORT=8081
 SEAT_PORT=8082
@@ -27,11 +29,16 @@ CUSTOMER_PORT=8084
 PAYMENT_PORT=8085
 NOTIFICATION_PORT=8086
 
-# Database names (created by init.sh)
-# Each key matches the JDBC URL in that service's application.yml.
+# ----------------------------
+# Database names (created by scripts/init.sh)
+# Each key matches the JDBC URL in that service's application.yml (DB_BOOKING -> booking-service, ...)
+# ----------------------------
 DB_BOOKING=cinema_booking
 DB_SEAT=cinema_seat
 DB_MOVIE=cinema_movie
 DB_CUSTOMER=cinema_customer
 DB_PAYMENT=cinema_payment
 DB_NOTIFICATION=cinema_notification
+
+
+
